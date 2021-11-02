@@ -92,7 +92,23 @@ function runWindowsPlugins(){
 }
 function runLinuxPlugins(){
     $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_bash |tee $user_profile"_linux_bash.log"
-    #$volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile 
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_pslist |tee $user_profile"_linux_pslist.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_pstree |tee $user_profile"_linux_pstree.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_psscan |tee $user_profile"_linux_psscan.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_psaux |tee $user_profile"_linux_psaux.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_psenv |tee $user_profile"_linux_psenv.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_psxview |tee $user_profile"_linux_psxview.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_ifconfig |tee $user_profile"_linux_ifconfig.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_netscan |tee $user_profile"_linux_netscan.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_netstat |tee $user_profile"_linux_netstat.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_truecrypt_passphrase |tee $user_profile"_linux_truecrypt_passphrase.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile linux_enumerate_files |tee $user_profile"_linux_enumerate_files.log"
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile 
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile 
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile 
+    $volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile 
+
+
     #$volatility_path --plugin=$plugins -f $memory_path --profile=$user_profile 
 }
 function runMacPlugins(){
